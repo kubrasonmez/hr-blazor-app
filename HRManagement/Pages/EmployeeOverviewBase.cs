@@ -16,22 +16,10 @@ namespace HRManagement
 
         public List<Employee> Employees { get; set; }
 
-        //protected AddEmployeeDialog AddEmployeeDialog { get; set; }
-
         protected override async Task OnInitializedAsync()
         {
             Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
         }
 
-        public async Task AddEmployeeDialog_OnDialogClose()
-        {
-            Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
-            StateHasChanged();
-        }
-
-        //protected void QuickAddEmployee()
-        //{
-        //    AddEmployeeDialog.Show();
-        //}
     }
 }
