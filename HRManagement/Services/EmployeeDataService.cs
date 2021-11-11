@@ -49,7 +49,7 @@ namespace HRManagement.Services
             var employeeJson =
                 new StringContent(JsonSerializer.Serialize(employee), Encoding.UTF8, "application/json");
 
-            await _httpClient.PutAsync("api/employee", employeeJson);
+            await _httpClient.PostAsync("api/employee/update", employeeJson);
         }
 
         public async Task DeleteEmployee(int employeeId)

@@ -46,7 +46,8 @@ namespace HRManagement.Api.Controllers
             return Created("employee", createdEmployee);
         }
 
-        [HttpPut]
+        [HttpPost()]
+        [Route("update")]
         public IActionResult UpdateEmployee([FromBody] Employee employee)
         {
             if (employee == null)
